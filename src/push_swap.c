@@ -6,7 +6,7 @@
 /*   By: anporced <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 14:50:12 by anporced          #+#    #+#             */
-/*   Updated: 2024/02/26 12:44:29 by anporced         ###   ########.fr       */
+/*   Updated: 2024/02/26 18:24:14 by anporced         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,9 @@ int main(int ac, char **av)
 	pb(&ab);
 	print_ab(&ab);
 	pb(&ab);
+	tiny_sort(&ab.lst_a, &ab);
 	print_ab(&ab);
-	ss(&ab);
-	print_ab(&ab);
-	return(0);
+	find_target(&ab);
+	set_cost(&ab);
+	return (0);
 }

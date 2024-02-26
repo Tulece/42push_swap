@@ -6,7 +6,7 @@
 /*   By: anporced <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 11:18:18 by anporced          #+#    #+#             */
-/*   Updated: 2024/02/22 18:18:40 by anporced         ###   ########.fr       */
+/*   Updated: 2024/02/26 15:14:17 by anporced         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	rotate(t_lst **lst)
 	if (lst_size(*lst) < 2)
 		return ;
 	*lst = (*lst)->next;
+	aux->next = NULL;
 	lst_add_back(lst, aux);
 }
 

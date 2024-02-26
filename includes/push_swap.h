@@ -6,7 +6,7 @@
 /*   By: anporced <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 11:27:52 by anporced          #+#    #+#             */
-/*   Updated: 2024/02/26 12:35:00 by anporced         ###   ########.fr       */
+/*   Updated: 2024/02/26 18:05:23 by anporced         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "../libft/includes/libft.h"
+#include <limits.h>
 
 typedef struct	s_lst
 {
 	int				nb;
 	int				index;
+	int				cost;
 	struct s_lst	*next;
 	struct s_lst	*target;
 }					t_lst;
@@ -62,3 +64,10 @@ void	rrb(t_ab *ab);
 void	rr(t_ab *ab);
 void	rrr(t_ab *ab);
 void	ss(t_ab *ab);
+
+t_lst	*find_highest_node(t_lst **lst);
+t_lst	*find_lowest_node(t_lst **lst);
+t_lst	*find_smallest_bigger_node(t_lst **lst, t_lst *node);
+void	find_target(t_ab *ab);
+void	set_cost(t_ab *ab);
+void	tiny_sort(t_lst **lst, t_ab *ab);

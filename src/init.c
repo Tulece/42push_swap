@@ -6,7 +6,7 @@
 /*   By: anporced <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 14:50:09 by anporced          #+#    #+#             */
-/*   Updated: 2024/02/26 12:43:42 by anporced         ###   ########.fr       */
+/*   Updated: 2024/02/26 17:29:15 by anporced         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	init(t_ab *ab)
 {
 	ab->lst_a = NULL;
 	ab->lst_b = NULL;
+	// ab->lst_b->target->index = 0;
 }
 
 void	create_lst(t_ab *ab, int nb)
@@ -33,7 +34,6 @@ void	set_index(t_ab *ab)
 	while (current)
 	{
 		current->index = index;
-		ft_printf("%d\n", current->index);
 		current = current->next;
 		index++;
 	}
@@ -42,7 +42,6 @@ void	set_index(t_ab *ab)
 	while (current)
 	{
 		current->index = index;
-		ft_printf("%d\n", current->index);
 		current = current->next;
 		index++;
 	}
