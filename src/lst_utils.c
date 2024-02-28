@@ -6,7 +6,7 @@
 /*   By: anporced <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 13:01:41 by anporced          #+#    #+#             */
-/*   Updated: 2024/02/26 12:38:32 by anporced         ###   ########.fr       */
+/*   Updated: 2024/02/28 14:17:07 by anporced         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,10 @@ void	lst_add_front(t_lst **lst, t_lst *aux)
 	if (!lst || !aux)
 		return ;
 	if (*lst == NULL)
+	{
 		*lst = aux;
+		aux->next = NULL;
+	}
 	else
 	{
 		aux->next = *lst;

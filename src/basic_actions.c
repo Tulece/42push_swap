@@ -6,7 +6,7 @@
 /*   By: anporced <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 11:18:18 by anporced          #+#    #+#             */
-/*   Updated: 2024/02/26 15:14:17 by anporced         ###   ########.fr       */
+/*   Updated: 2024/02/28 14:17:36 by anporced         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,12 @@
 
 void	push(t_lst **src, t_lst **dst)
 {
-	t_lst *aux;
+	t_lst	*aux;
 
 	if (!*src)
 		return ;
 	aux = *src;
 	*src = aux->next;
-	aux->next = NULL;
 	lst_add_front(dst, aux);
 }
 

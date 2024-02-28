@@ -6,7 +6,7 @@
 /*   By: anporced <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 11:27:52 by anporced          #+#    #+#             */
-/*   Updated: 2024/02/26 18:05:23 by anporced         ###   ########.fr       */
+/*   Updated: 2024/02/28 17:12:12 by anporced         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,3 +71,7 @@ t_lst	*find_smallest_bigger_node(t_lst **lst, t_lst *node);
 void	find_target(t_ab *ab);
 void	set_cost(t_ab *ab);
 void	tiny_sort(t_lst **lst, t_ab *ab);
+t_lst	*find_lowest_cost(t_lst **lst);
+void	put_node_to_top_a(t_ab *ab, t_lst *target);
+void	put_node_to_top_b(t_ab *ab);
+void	algorithm(t_ab *ab);
