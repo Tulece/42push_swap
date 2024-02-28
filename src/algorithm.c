@@ -6,7 +6,7 @@
 /*   By: anporced <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 14:28:28 by anporced          #+#    #+#             */
-/*   Updated: 2024/02/28 17:15:24 by anporced         ###   ########.fr       */
+/*   Updated: 2024/02/28 18:22:45 by anporced         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,47 +23,6 @@ void	tiny_sort(t_lst **lst, t_ab *ab)
 		rra(ab);
 	if ((*lst)->nb > (*lst)->next->nb)
 		sa(ab);
-}
-
-void	find_target(t_ab *ab)
-{
-	t_lst	*aux;
-
-	aux = ab->lst_b;
-	while (aux)
-	{
-		aux->target = find_smallest_bigger_node(&ab->lst_a, aux);
-		aux = aux->next;
-	}
-}
-
-void	set_cost(t_ab *ab)
-{
-	t_lst	*current;
-
-	current = ab->lst_b;
-	while (current)
-	{
-		if (current->index <= lst_size(ab->lst_b) / 2)
-		{
-			if (current->target->index <= lst_size(ab->lst_a) / 2)
-				current->target->cost = current->target->index;
-			else
-				current->target->cost
-					= lst_size(ab->lst_a) - current->target->index;
-			if ((current->index <= lst_size(ab->lst_b) / 2
-					&& current->target->index <= lst_size(ab->lst_a) / 2)
-				|| (current->index > lst_size(ab->lst_b) / 2
-					&& current->target->index > lst_size(ab->lst_a) / 2))
-			{
-				if (current->cost <= current->target->cost)
-					current->cost = current->target->cost;
-			}
-			else
-				current->cost = current->cost + current->target->cost;
-		}
-		current = current->next;
-	}
 }
 
 void	put_node_to_top_a(t_ab *ab, t_lst *target)
@@ -94,6 +53,20 @@ void	put_node_to_top_b(t_ab *ab)
 			rrb(ab);
 }
 
+// void	ra_or_rra(t_ab *ab)
+// {
+// 	t_lst	*shortest_node;
+// 	t_lst	*current;
+
+// 	shortest_node = ab->lst_a;
+// 	current = ab->lst_a;
+// 	while (current)
+// 	{
+// 		if (current->cost < shortest_node->cost)
+// 		current = current->next;
+// 	}
+	// ra ou rra jusqua ce que le plus petit node soit en haut de lst a
+// }
 void	algorithm(t_ab *ab)
 {
 	while (lst_size(ab->lst_a) > 3)
@@ -108,6 +81,5 @@ void	algorithm(t_ab *ab)
 		put_node_to_top_a(ab, ab->lst_b->target);
 		pa(ab);
 		print_ab(ab);
-		// ra ou rra jusqua ce que le plus petit node soit en haut de lst a
 	}
 }
