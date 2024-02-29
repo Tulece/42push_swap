@@ -6,7 +6,7 @@
 /*   By: anporced <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:30:05 by anporced          #+#    #+#             */
-/*   Updated: 2024/02/29 17:12:39 by anporced         ###   ########.fr       */
+/*   Updated: 2024/02/29 17:24:52 by anporced         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,9 @@ void	double_rotation(t_ab *ab)
 	size_a = lst_size(ab->lst_a);
 	size_b = lst_size(ab->lst_b);
 	i = target_a->cost > target_b->cost ? target_b->cost : target_a->cost;
-	printf("target a index = %d\t target_b index = %d\t target_a->cost = %d\t \
-	target_b->cost = %d\t target_a nb = %d\t target_b->nb = %d\t \
-	 target_b->target->index = %d\t target_b->target->cost = %d\t i = %d\n ", target_a->index, target_b->index, target_a->cost, target_b->cost, target_a->nb, target_b->nb, target_b->target->index, target_b->target->cost, i);
+	// printf("target a index = %d\t target_b index = %d\t target_a->cost = %d\t \
+	// target_b->cost = %d\t target_a nb = %d\t target_b->nb = %d\t \
+	//  target_b->target->index = %d\t target_b->target->cost = %d\t i = %d\n ", target_a->index, target_b->index, target_a->cost, target_b->cost, target_a->nb, target_b->nb, target_b->target->index, target_b->target->cost, i);
 	if (target_a->index <= size_a / 2 && target_b->index <= size_b / 2)
 		while (i--)
 			cheat_code(target_a, target_b, 0, ab);
