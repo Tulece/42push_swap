@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anporced <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/21 14:50:12 by anporced          #+#    #+#             */
-/*   Updated: 2024/02/29 21:00:24 by anporced         ###   ########.fr       */
+/*   Created: 2024/02/29 20:55:12 by anporced          #+#    #+#             */
+/*   Updated: 2024/02/29 20:57:48 by anporced         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	main(int ac, char **av)
+void	lst_ab_clear(t_lst **lst_a, t_lst **lst_b)
 {
-	t_ab	ab;
+	t_lst	*current;
+	t_lst	*next;
 
-	if (ac < 2)
-		return (ft_printf("Error.\n"));
-	init(&ab);
-	split_argv(ac, av, &ab);
-	if (is_sorted(&ab))
-		return (0);
-	algorithm(&ab);
-	ft_printf("the program is sorted : %d\n", is_sorted(&ab));
-	lst_ab_clear(&ab.lst_a, &ab.lst_b);
-	return (0);
+	current = *lst_a;
+	while (current)
+	{
+		next = current->next;
+		free(current);
+		current = next;
+	}
+	current = *lst_b;
+	while (current)
+	{
+		next = current->next;
+		free(current);
+		current = next;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: anporced <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 18:14:45 by anporced          #+#    #+#             */
-/*   Updated: 2024/02/29 17:21:38 by anporced         ###   ########.fr       */
+/*   Updated: 2024/02/29 20:14:18 by anporced         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,5 +93,14 @@ t_lst	*find_lowest_cost(t_lst **lst)
 	}
 	return (lowest);
 }
+int	find_total_cost(t_lst *target_a, t_lst *target_b)
+{
+	int	i;
 
+	if (target_a->cost > target_b->cost)
+		i = target_b->cost;
+	else
+		i = target_a->cost;
+	return (i);
+}
 
