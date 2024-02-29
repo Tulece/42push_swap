@@ -6,7 +6,7 @@
 /*   By: anporced <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 18:14:45 by anporced          #+#    #+#             */
-/*   Updated: 2024/02/29 12:13:54 by anporced         ###   ########.fr       */
+/*   Updated: 2024/02/29 17:21:38 by anporced         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ t_lst	*find_lowest_cost(t_lst **lst)
 	lowest = *lst;
 	while (aux)
 	{
-		if (aux->cost < lowest->cost)
+		if (aux->cost + aux->target->cost < lowest->cost + lowest->target->cost)
 			lowest = aux;
 		aux = aux->next;
 	}
