@@ -6,7 +6,7 @@
 /*   By: anporced <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:30:05 by anporced          #+#    #+#             */
-/*   Updated: 2024/02/29 15:40:47 by anporced         ###   ########.fr       */
+/*   Updated: 2024/02/29 16:06:59 by anporced         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,6 @@ void	cheat_code(t_lst *target_a, t_lst *target_b, int flag, t_ab *ab)
 		rrr(ab);
 	else if (flag == 0)
 		rr(ab);
-	target_b->cost--;
-	target_a->cost--;
 }
 
 void	double_rotation(t_ab *ab)
@@ -56,17 +54,20 @@ void	double_rotation(t_ab *ab)
 	t_lst	*target_b;
 	int		size_a;
 	int		size_b;
+	int		i;
 
 	target_b = find_lowest_cost(&ab->lst_b);
 	target_a = target_b->target;
 	size_a = lst_size(ab->lst_a);
 	size_b = lst_size(ab->lst_b);
+	i = target_a->cost > target_b->cost ? target_b->cost : target_a->cost;
 	if (target_a->index <= size_a / 2 && target_b->index <= size_b / 2)
-		while (ab->lst_a != target_a && ab->lst_b != target_b)
+		while (i--)
 			cheat_code(target_a, target_b, 0, ab);
 	else
-		while (ab->lst_a != target_a && ab->lst_b != target_b)
+		while (i--)
 			cheat_code(target_a, target_b, 1, ab);
+	set_index(ab);
 	put_node_to_top_b(ab);
 	put_node_to_top_a(ab, ab->lst_b->target);
 }
