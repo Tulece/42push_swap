@@ -6,7 +6,7 @@
 /*   By: anporced <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 11:27:52 by anporced          #+#    #+#             */
-/*   Updated: 2024/02/29 12:05:34 by anporced         ###   ########.fr       */
+/*   Updated: 2024/02/29 14:49:03 by anporced         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ typedef struct	s_ab
 void	init(t_ab *ab);
 
 void	split_argv(int ac, char **av, t_ab *ab);
-void	set_index(t_ab *ab);
 
 void	lst_add_front(t_lst **lst, t_lst *new);
 void	lst_add_back(t_lst **lst, t_lst *new_lst);
@@ -66,13 +65,19 @@ void	rrr(t_ab *ab);
 void	ss(t_ab *ab);
 
 int		is_sorted(t_ab *ab);
+
 t_lst	*find_highest_node(t_lst **lst);
 t_lst	*find_lowest_node(t_lst **lst);
 t_lst	*find_smallest_bigger_node(t_lst **lst, t_lst *node);
-void	find_target(t_ab *ab);
-void	set_cost(t_ab *ab);
-void	tiny_sort(t_lst **lst, t_ab *ab);
 t_lst	*find_lowest_cost(t_lst **lst);
+void	find_target(t_ab *ab);
+
+void	set_index(t_ab *ab);
+void	set_cost(t_ab *ab);
+
 void	put_node_to_top_a(t_ab *ab, t_lst *target);
 void	put_node_to_top_b(t_ab *ab);
+void	double_rotation(t_ab *ab);
+
+void	tiny_sort(t_lst **lst, t_ab *ab);
 void	algorithm(t_ab *ab);

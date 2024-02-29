@@ -6,7 +6,7 @@
 /*   By: anporced <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 14:28:28 by anporced          #+#    #+#             */
-/*   Updated: 2024/02/29 14:15:22 by anporced         ###   ########.fr       */
+/*   Updated: 2024/02/29 14:47:40 by anporced         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,34 +23,6 @@ void	tiny_sort(t_lst **lst, t_ab *ab)
 		rra(ab);
 	if ((*lst)->nb > (*lst)->next->nb)
 		sa(ab);
-}
-
-void	put_node_to_top_a(t_ab *ab, t_lst *target)
-{
-	int		size;
-
-	size = lst_size(ab->lst_a);
-	if (target->index < size / 2)
-		while (ab->lst_a != target)
-			ra(ab);
-	else
-		while (ab->lst_a != target)
-			rra(ab);
-}
-
-void	put_node_to_top_b(t_ab *ab)
-{
-	t_lst	*lowest_cost_node;
-	int		size;
-
-	lowest_cost_node = find_lowest_cost(&ab->lst_b);
-	size = lst_size(ab->lst_b);
-	if (lowest_cost_node->index < size / 2)
-		while (ab->lst_b != lowest_cost_node)
-			rb(ab);
-	else
-		while (ab->lst_b != lowest_cost_node)
-			rrb(ab);
 }
 
 int	is_sorted(t_ab *ab)
@@ -70,6 +42,8 @@ int	is_sorted(t_ab *ab)
 	return (1);
 }
 
+
+
 void	algorithm(t_ab *ab)
 {
 	t_lst	*smallest_node;
@@ -82,8 +56,7 @@ void	algorithm(t_ab *ab)
 		set_index(ab);
 		find_target(ab);
 		set_cost(ab);
-		put_node_to_top_b(ab);
-		put_node_to_top_a(ab, ab->lst_b->target);
+		double_rotation(ab);
 		pa(ab);
 	}
 	smallest_node = find_lowest_node(&ab->lst_a);
