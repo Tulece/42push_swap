@@ -6,7 +6,7 @@
 /*   By: anporced <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 14:50:12 by anporced          #+#    #+#             */
-/*   Updated: 2024/02/29 21:00:24 by anporced         ###   ########.fr       */
+/*   Updated: 2024/02/29 21:02:58 by anporced         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ int	main(int ac, char **av)
 		return (0);
 	algorithm(&ab);
 	ft_printf("the program is sorted : %d\n", is_sorted(&ab));
-	lst_ab_clear(&ab.lst_a, &ab.lst_b);
+	free_lst_ab(&ab.lst_a, &ab.lst_b);
 	return (0);
 }
