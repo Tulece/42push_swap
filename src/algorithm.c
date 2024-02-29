@@ -6,7 +6,7 @@
 /*   By: anporced <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 14:28:28 by anporced          #+#    #+#             */
-/*   Updated: 2024/02/29 12:49:58 by anporced         ###   ########.fr       */
+/*   Updated: 2024/02/29 14:15:22 by anporced         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ void	algorithm(t_ab *ab)
 
 	while (lst_size(ab->lst_a) > 3)
 		pb(ab);
+	tiny_sort(&ab->lst_a, ab);
 	while (ab->lst_b)
 	{
 		set_index(ab);
