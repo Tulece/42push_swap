@@ -6,7 +6,7 @@
 /*   By: anporced <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:30:05 by anporced          #+#    #+#             */
-/*   Updated: 2024/02/29 14:59:55 by anporced         ###   ########.fr       */
+/*   Updated: 2024/02/29 15:32:16 by anporced         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	double_rotation(t_ab *ab)
 	target_a = target_b->target;
 	size_a = lst_size(ab->lst_a);
 	size_b = lst_size(ab->lst_b);
-	if (target_a->index < size_a / 2 && target_b->index < size_b / 2)
+	if (target_a->index > size_a / 2 && target_b->index > size_b / 2)
 		while (ab->lst_a != target_a && ab->lst_b != target_b)
 			cheat_code(target_a, target_b, 0, ab);
 	else
