@@ -6,7 +6,7 @@
 /*   By: anporced <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 14:28:28 by anporced          #+#    #+#             */
-/*   Updated: 2024/02/29 17:23:41 by anporced         ###   ########.fr       */
+/*   Updated: 2024/02/29 17:50:51 by anporced         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ void	algorithm(t_ab *ab)
 		set_index(ab);
 		find_target(ab);
 		set_cost(ab);
-		// print_ab(ab);
 		double_rotation(ab);
 		pa(ab);
 	}
@@ -68,5 +67,4 @@ void	algorithm(t_ab *ab)
 	else
 		while(ab->lst_a != smallest_node)
 			ra(ab);
-	// print_ab(ab);
 }
