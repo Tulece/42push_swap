@@ -6,7 +6,7 @@
 /*   By: anporced <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 11:27:52 by anporced          #+#    #+#             */
-/*   Updated: 2024/02/28 17:12:12 by anporced         ###   ########.fr       */
+/*   Updated: 2024/02/29 12:05:34 by anporced         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ void	rr(t_ab *ab);
 void	rrr(t_ab *ab);
 void	ss(t_ab *ab);
 
+int		is_sorted(t_ab *ab);
 t_lst	*find_highest_node(t_lst **lst);
 t_lst	*find_lowest_node(t_lst **lst);
 t_lst	*find_smallest_bigger_node(t_lst **lst, t_lst *node);

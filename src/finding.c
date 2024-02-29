@@ -6,7 +6,7 @@
 /*   By: anporced <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 18:14:45 by anporced          #+#    #+#             */
-/*   Updated: 2024/02/28 18:16:44 by anporced         ###   ########.fr       */
+/*   Updated: 2024/02/29 12:13:54 by anporced         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,6 @@ t_lst	*find_lowest_cost(t_lst **lst)
 			lowest = aux;
 		aux = aux->next;
 	}
-	printf("lowest cost = %d\n", lowest->cost);
 	return (lowest);
 }
 

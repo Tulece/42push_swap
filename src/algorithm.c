@@ -6,7 +6,7 @@
 /*   By: anporced <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 14:28:28 by anporced          #+#    #+#             */
-/*   Updated: 2024/02/28 18:22:45 by anporced         ###   ########.fr       */
+/*   Updated: 2024/02/29 12:11:55 by anporced         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,33 +53,44 @@ void	put_node_to_top_b(t_ab *ab)
 			rrb(ab);
 }
 
-// void	ra_or_rra(t_ab *ab)
-// {
-// 	t_lst	*shortest_node;
-// 	t_lst	*current;
+int	is_sorted(t_ab *ab)
+{
+	t_lst	*lst_a;
+	t_lst	*prev;
 
-// 	shortest_node = ab->lst_a;
-// 	current = ab->lst_a;
-// 	while (current)
-// 	{
-// 		if (current->cost < shortest_node->cost)
-// 		current = current->next;
-// 	}
-	// ra ou rra jusqua ce que le plus petit node soit en haut de lst a
-// }
+	prev = ab->lst_a;
+	lst_a = ab->lst_a->next;
+	while (lst_a)
+	{
+		if (prev->nb > lst_a->nb)
+			return (0);
+		prev = lst_a;
+		lst_a = lst_a->next;
+	}
+	return (1);
+}
+
 void	algorithm(t_ab *ab)
 {
+	t_lst	*smallest_node;
+
 	while (lst_size(ab->lst_a) > 3)
 		pb(ab);
 	while (ab->lst_b)
 	{
-		//is sorted
 		set_index(ab);
 		find_target(ab);
 		set_cost(ab);
 		put_node_to_top_b(ab);
 		put_node_to_top_a(ab, ab->lst_b->target);
 		pa(ab);
-		print_ab(ab);
 	}
+	smallest_node = find_lowest_node(&ab->lst_a);
+	set_index(ab);
+	if (smallest_node->index > lst_size(ab->lst_a) / 2)
+		while(ab->lst_a != smallest_node)
+			rra(ab);
+	else
+		while(ab->lst_a != smallest_node)
+			ra(ab);
 }

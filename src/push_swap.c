@@ -6,7 +6,7 @@
 /*   By: anporced <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 14:50:12 by anporced          #+#    #+#             */
-/*   Updated: 2024/02/28 16:52:30 by anporced         ###   ########.fr       */
+/*   Updated: 2024/02/29 12:13:26 by anporced         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,10 @@ int	main(int ac, char **av)
 		return (ft_printf("Error.\n"));
 	init(&ab);
 	split_argv(ac, av, &ab);
-	print_ab(&ab);
+	if (is_sorted(&ab))
+		return (0);
 	algorithm(&ab);
-	// print_ab(&ab);
+	while (!is_sorted(&ab))
+		ra(&ab);
 	return (0);
 }
