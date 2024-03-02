@@ -6,7 +6,7 @@
 /*   By: anporced <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 11:27:52 by anporced          #+#    #+#             */
-/*   Updated: 2024/02/29 21:03:21 by anporced         ###   ########.fr       */
+/*   Updated: 2024/03/02 20:03:24 by anporced         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,4 @@ void	double_rotation(t_ab *ab);
 void	tiny_sort(t_lst **lst, t_ab *ab);
 void	algorithm(t_ab *ab);
 
-void	free_lst_ab(t_lst **lst_a, t_lst **lst_b);
+void	free_lst(t_ab *ab);

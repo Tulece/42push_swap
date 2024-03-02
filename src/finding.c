@@ -6,7 +6,7 @@
 /*   By: anporced <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 18:14:45 by anporced          #+#    #+#             */
-/*   Updated: 2024/02/29 20:14:18 by anporced         ###   ########.fr       */
+/*   Updated: 2024/03/02 20:02:49 by anporced         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,7 @@ int	find_total_cost(t_lst *target_a, t_lst *target_b)
 {
 	int	i;
 
+	i = 0;
 	if (target_a->cost > target_b->cost)
 		i = target_b->cost;
 	else
