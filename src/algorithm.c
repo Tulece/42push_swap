@@ -6,7 +6,7 @@
 /*   By: anporced <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 14:28:28 by anporced          #+#    #+#             */
-/*   Updated: 2024/02/29 17:50:51 by anporced         ###   ########.fr       */
+/*   Updated: 2024/03/03 11:16:04 by anporced         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,6 @@ int	is_sorted(t_ab *ab)
 	return (1);
 }
 
-
-
 void	algorithm(t_ab *ab)
 {
 	t_lst	*smallest_node;
@@ -62,9 +60,9 @@ void	algorithm(t_ab *ab)
 	smallest_node = find_lowest_node(&ab->lst_a);
 	set_index(ab);
 	if (smallest_node->index > lst_size(ab->lst_a) / 2)
-		while(ab->lst_a != smallest_node)
+		while (ab->lst_a != smallest_node)
 			rra(ab);
 	else
-		while(ab->lst_a != smallest_node)
+		while (ab->lst_a != smallest_node)
 			ra(ab);
 }

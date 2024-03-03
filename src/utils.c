@@ -6,7 +6,7 @@
 /*   By: anporced <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 17:55:43 by anporced          #+#    #+#             */
-/*   Updated: 2024/03/02 20:29:05 by anporced         ###   ########.fr       */
+/*   Updated: 2024/03/03 11:13:35 by anporced         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	print_ab(t_ab *ab)
 {
-	t_lst *act_a;
-	t_lst *act_b;
+	t_lst	*act_a;
+	t_lst	*act_b;
 
 	act_a = ab->lst_a;
 	act_b = ab->lst_b;
