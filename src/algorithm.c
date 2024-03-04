@@ -6,7 +6,7 @@
 /*   By: anporced <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 14:28:28 by anporced          #+#    #+#             */
-/*   Updated: 2024/03/03 11:16:04 by anporced         ###   ########.fr       */
+/*   Updated: 2024/03/04 18:52:51 by anporced         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	algorithm(t_ab *ab)
 		set_index(ab);
 		find_target(ab);
 		set_cost(ab);
-		double_rotation(ab);
+		handle_double_rotation(ab);
 		pa(ab);
 	}
 	smallest_node = find_lowest_node(&ab->lst_a);
