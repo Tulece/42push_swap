@@ -6,7 +6,7 @@
 /*   By: anporced <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 11:27:52 by anporced          #+#    #+#             */
-/*   Updated: 2024/03/05 10:56:18 by anporced         ###   ########.fr       */
+/*   Updated: 2024/03/05 12:25:24 by anporced         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	init(t_ab *ab);
 
 int		check_double(t_lst *lst, int nb);
 int		check_input(char *av, long nb, t_lst *lst);
-void	split_argv(int ac, char **av, t_ab *ab);
+int	split_argv(int ac, char **av, t_ab *ab);
 
 void	free_tab(char **av);
 void	free_lst(t_ab *ab);

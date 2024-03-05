@@ -6,7 +6,7 @@
 /*   By: anporced <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 14:50:12 by anporced          #+#    #+#             */
-/*   Updated: 2024/03/03 11:13:19 by anporced         ###   ########.fr       */
+/*   Updated: 2024/03/05 13:03:56 by anporced         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,12 @@ int	main(int ac, char **av)
 	t_ab	ab;
 
 	if (ac < 2)
-		return (ft_printf("Error.\n"));
+		return (ft_putstr_fd("Error\n", 2), 0);
 	init(&ab);
-	split_argv(ac, av, &ab);
+	if (!split_argv(ac, av, &ab))
+		return (free_lst(&ab), ft_putstr_fd("biteError\n", 2), 0);
 	if (is_sorted(&ab))
-		return (0);
+		return (free_lst(&ab), 0);
 	algorithm(&ab);
 	free_lst(&ab);
 	return (0);

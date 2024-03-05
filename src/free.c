@@ -6,7 +6,7 @@
 /*   By: anporced <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 20:55:12 by anporced          #+#    #+#             */
-/*   Updated: 2024/03/05 10:56:08 by anporced         ###   ########.fr       */
+/*   Updated: 2024/03/05 12:27:51 by anporced         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	free_tab(char **av)
 	int	i;
 
 	i = -1;
-	while (++i)
+	while (av[++i])
 		free(av[i]);
 	free(av);
 }
