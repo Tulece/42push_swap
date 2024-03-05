@@ -6,7 +6,7 @@
 /*   By: anporced <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:30:05 by anporced          #+#    #+#             */
-/*   Updated: 2024/03/04 18:51:45 by anporced         ###   ########.fr       */
+/*   Updated: 2024/03/04 19:24:29 by anporced         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	handle_double_rotation(t_ab *ab)
 	int		size_b;
 	int		i;
 
-	target_b = find_lowest_cost(&ab->lst_b);
+	target_b = find_lowest_total_cost(&ab->lst_b);
 	target_a = target_b->target;
 	size_a = lst_size(ab->lst_a);
 	size_b = lst_size(ab->lst_b);

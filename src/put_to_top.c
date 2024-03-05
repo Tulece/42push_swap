@@ -6,7 +6,7 @@
 /*   By: anporced <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 18:44:39 by anporced          #+#    #+#             */
-/*   Updated: 2024/03/04 18:44:59 by anporced         ###   ########.fr       */
+/*   Updated: 2024/03/04 19:24:29 by anporced         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	put_node_to_top_b(t_ab *ab)
 	t_lst	*lowest_cost_node;
 	int		size;
 
-	lowest_cost_node = find_lowest_cost(&ab->lst_b);
+	lowest_cost_node = find_lowest_total_cost(&ab->lst_b);
 	size = lst_size(ab->lst_b);
 	if (lowest_cost_node->index <= size / 2)
 		while (ab->lst_b != lowest_cost_node)

@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free.c                                             :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anporced <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/29 20:55:12 by anporced          #+#    #+#             */
-/*   Updated: 2024/03/05 10:56:08 by anporced         ###   ########.fr       */
+/*   Created: 2024/03/04 19:26:55 by anporced          #+#    #+#             */
+/*   Updated: 2024/03/04 19:58:45 by anporced         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "libft.h"
 
-void	free_lst(t_ab *ab)
+long	ft_atol(const char *s)
 {
-	t_lst	*current;
-	t_lst	*next;
+	long	sign;
+	long	res;
 
-	current = ab->lst_a;
-	while (current)
+	sign = 1;
+	res = 0;
+	while ((*s >= 9 && *s <= 13) || *s == 32)
+		s++;
+	if (*s == '-' || *s == '+')
 	{
-		next = current->next;
-		free(current);
-		current = next;
+		if (*s == '-')
+			sign = -1;
+		s++;
 	}
-}
-
-void	free_tab(char **av)
-{
-	int	i;
-
-	i = -1;
-	while (++i)
-		free(av[i]);
-	free(av);
+	while (*s >= '0' && *s <= '9')
+	{
+		res = res * 10 + (*s - '0');
+		s++;
+	}
+	return (res * sign);
 }

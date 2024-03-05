@@ -6,7 +6,7 @@
 /*   By: anporced <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 14:50:09 by anporced          #+#    #+#             */
-/*   Updated: 2024/02/28 15:13:07 by anporced         ###   ########.fr       */
+/*   Updated: 2024/03/05 10:56:35 by anporced         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	split_argv(int ac, char **av, t_ab *ab)
 	char	**tab;
 	int		i;
 	int		j;
-	int		nb;
+	long	nb;
 
 	i = 0;
 	while (++i < ac)
@@ -32,13 +32,12 @@ void	split_argv(int ac, char **av, t_ab *ab)
 		j = -1;
 		while (tab[++j])
 		{
-			nb = ft_atoi(tab[j]);
-			create_lst(ab, nb);
+			nb = ft_atol(tab[j]);
+			if (nb > INT_MAX || nb < INT_MIN
+				|| (!check_input(av[i], nb, ab->lst_a)))
+				return (free_tab(tab));
+			lst_add_back(&ab->lst_a, lst_new(nb));
 		}
+		free_tab(tab);
 	}
-}
-
-void	create_lst(t_ab *ab, int nb)
-{
-	lst_add_back(&ab->lst_a, lst_new(nb));
 }

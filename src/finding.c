@@ -6,7 +6,7 @@
 /*   By: anporced <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 18:14:45 by anporced          #+#    #+#             */
-/*   Updated: 2024/03/04 18:53:14 by anporced         ###   ########.fr       */
+/*   Updated: 2024/03/04 19:24:29 by anporced         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	find_target(t_ab *ab)
 	}
 }
 
-t_lst	*find_lowest_cost(t_lst **lst)
+t_lst	*find_lowest_total_cost(t_lst **lst)
 {
 	t_lst	*aux;
 	t_lst	*lowest;
