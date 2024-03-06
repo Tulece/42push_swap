@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anporced <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/21 14:50:12 by anporced          #+#    #+#             */
-/*   Updated: 2024/03/06 17:03:45 by anporced         ###   ########.fr       */
+/*   Created: 2024/03/05 14:47:09 by anporced          #+#    #+#             */
+/*   Updated: 2024/03/05 14:51:35 by anporced         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "libft.h"
 
-int	main(int ac, char **av)
+int	ft_strcmp(char *s1, char *s2)
 {
-	t_ab	ab;
+	int	i;
 
-	if (ac < 2)
-		return (ft_putstr_fd("Error\n", 2), 0);
-	init(&ab);
-	if (!split_argv(ac, av, &ab))
-		return (free_lst(&ab), ft_putstr_fd("Error\n", 2), 0);
-	if (is_sorted(&ab))
-		return (free_lst(&ab), 0);
-	algorithm(&ab);
-	free_lst(&ab);
-	return (0);
+	i = 0;
+	while (s1[i] && s2[i] && s1[i] == s2[i])
+		i++;
+	return (s1[i] - s2[i]);
 }

@@ -6,7 +6,7 @@
 /*   By: anporced <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 14:28:28 by anporced          #+#    #+#             */
-/*   Updated: 2024/03/04 18:52:51 by anporced         ###   ########.fr       */
+/*   Updated: 2024/03/06 16:06:25 by anporced         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,23 +23,6 @@ void	tiny_sort(t_lst **lst, t_ab *ab)
 		rra(ab);
 	if ((*lst)->nb > (*lst)->next->nb)
 		sa(ab);
-}
-
-int	is_sorted(t_ab *ab)
-{
-	t_lst	*lst_a;
-	t_lst	*prev;
-
-	prev = ab->lst_a;
-	lst_a = ab->lst_a->next;
-	while (lst_a)
-	{
-		if (prev->nb > lst_a->nb)
-			return (0);
-		prev = lst_a;
-		lst_a = lst_a->next;
-	}
-	return (1);
 }
 
 void	algorithm(t_ab *ab)

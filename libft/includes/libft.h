@@ -6,7 +6,7 @@
 /*   By: anporced <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 14:56:26 by anporced          #+#    #+#             */
-/*   Updated: 2024/03/04 19:28:58 by anporced         ###   ########.fr       */
+/*   Updated: 2024/03/05 15:54:08 by anporced         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stddef.h>
 # include <stdio.h>
 # include "ft_printf.h"
+# include "get_next_line.h"
 
 //libc functions
 
@@ -31,6 +32,7 @@ int		ft_tolower(int c);
 int		ft_atoi(const char *s);
 long	ft_atol(const char *s);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
+int		ft_strcmp(char *s1, char *s2);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);

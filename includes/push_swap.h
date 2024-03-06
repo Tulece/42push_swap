@@ -6,15 +6,18 @@
 /*   By: anporced <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 11:27:52 by anporced          #+#    #+#             */
-/*   Updated: 2024/03/05 12:25:24 by anporced         ###   ########.fr       */
+/*   Updated: 2024/03/05 14:41:31 by anporced         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include "../libft/includes/libft.h"
-#include <limits.h>
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
+
+# include <unistd.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include "../libft/includes/libft.h"
+# include <limits.h>
 
 typedef struct s_lst
 {
@@ -50,7 +53,7 @@ void	init(t_ab *ab);
 
 int		check_double(t_lst *lst, int nb);
 int		check_input(char *av, long nb, t_lst *lst);
-int	split_argv(int ac, char **av, t_ab *ab);
+int		split_argv(int ac, char **av, t_ab *ab);
 
 void	free_tab(char **av);
 void	free_lst(t_ab *ab);
@@ -87,3 +90,5 @@ void	handle_double_rotation(t_ab *ab);
 void	tiny_sort(t_lst **lst, t_ab *ab);
 void	algorithm(t_ab *ab);
 int		is_sorted(t_ab *ab);
+
+#endif

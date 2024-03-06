@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anporced <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/21 14:50:12 by anporced          #+#    #+#             */
-/*   Updated: 2024/03/06 17:03:45 by anporced         ###   ########.fr       */
+/*   Created: 2024/03/05 14:39:12 by anporced          #+#    #+#             */
+/*   Updated: 2024/03/06 17:02:59 by anporced         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#ifndef CHECKER_H
+# define CHECKER_H
 
-int	main(int ac, char **av)
-{
-	t_ab	ab;
+# include "push_swap.h"
 
-	if (ac < 2)
-		return (ft_putstr_fd("Error\n", 2), 0);
-	init(&ab);
-	if (!split_argv(ac, av, &ab))
-		return (free_lst(&ab), ft_putstr_fd("Error\n", 2), 0);
-	if (is_sorted(&ab))
-		return (free_lst(&ab), 0);
-	algorithm(&ab);
-	free_lst(&ab);
-	return (0);
-}
+int	check_instructions(char *instruction, t_lst **lst_a, t_lst **lst_b);
+int	checker(t_ab *ab);
+
+#endif
