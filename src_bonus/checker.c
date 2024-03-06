@@ -6,7 +6,7 @@
 /*   By: anporced <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 14:38:35 by anporced          #+#    #+#             */
-/*   Updated: 2024/03/06 17:00:32 by anporced         ###   ########.fr       */
+/*   Updated: 2024/03/06 17:41:04 by anporced         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,6 @@ int	main(int ac, char **av)
 		ft_printf("KO\n");
 	else
 		ft_printf("OK\n");
+	free_lst(&ab);
 	return (0);
 }
