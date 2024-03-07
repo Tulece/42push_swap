@@ -6,7 +6,7 @@
 /*   By: anporced <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 14:50:12 by anporced          #+#    #+#             */
-/*   Updated: 2024/03/06 17:03:45 by anporced         ###   ########.fr       */
+/*   Updated: 2024/03/07 15:11:33 by anporced         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main(int ac, char **av)
 	t_ab	ab;
 
 	if (ac < 2)
-		return (ft_putstr_fd("Error\n", 2), 0);
+		return (0);
 	init(&ab);
 	if (!split_argv(ac, av, &ab))
 		return (free_lst(&ab), ft_putstr_fd("Error\n", 2), 0);
