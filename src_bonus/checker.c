@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anporced <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: anporced <anporced@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 14:38:35 by anporced          #+#    #+#             */
-/*   Updated: 2024/03/07 15:11:46 by anporced         ###   ########.fr       */
+/*   Updated: 2024/03/10 16:21:54 by anporced         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	main(int ac, char **av)
 		return (free_lst(&ab), ft_putstr_fd("Error\n", 2), 1);
 	if (checker(&ab))
 		return (free_lst(&ab), ft_putstr_fd("Error\n", 2), 1);
-	if (!is_sorted(&ab))
+	if (!is_sorted(&ab) || lst_size(ab.lst_b) != 0)
 		ft_printf("KO\n");
 	else
 		ft_printf("OK\n");

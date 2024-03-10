@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anporced <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: anporced <anporced@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 14:50:09 by anporced          #+#    #+#             */
-/*   Updated: 2024/03/06 16:58:45 by anporced         ###   ########.fr       */
+/*   Updated: 2024/03/10 16:02:18 by anporced         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int	split_argv(int ac, char **av, t_ab *ab)
 	i = 0;
 	while (++i < ac)
 	{
+		if (!av[i][0])
+			return(0);
 		tab = ft_split(av[i], ' ');
 		j = 0;
 		while (tab[j])

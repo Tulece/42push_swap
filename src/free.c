@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anporced <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: anporced <anporced@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 20:55:12 by anporced          #+#    #+#             */
-/*   Updated: 2024/03/05 12:27:51 by anporced         ###   ########.fr       */
+/*   Updated: 2024/03/10 16:14:24 by anporced         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,13 @@ void	free_lst(t_ab *ab)
 	t_lst	*next;
 
 	current = ab->lst_a;
+	while (current)
+	{
+		next = current->next;
+		free(current);
+		current = next;
+	}
+	current = ab->lst_b;
 	while (current)
 	{
 		next = current->next;
